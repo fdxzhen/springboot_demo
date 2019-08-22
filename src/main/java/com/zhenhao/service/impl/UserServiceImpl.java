@@ -28,5 +28,8 @@ public class UserServiceImpl implements UserService {
     public  void deleteById(int id){
         userDao.deleteById(id);
     }
+    public void editByUser(User user){
+        userDao.editByUser(user);
+    }
 }
 

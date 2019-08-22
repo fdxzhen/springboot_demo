@@ -4,6 +4,7 @@ import com.zhenhao.bean.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface UserDao {
     public void insertUser(User user);
     @Delete("delete from user where id=#{id}")
     public void deleteById(int id);
+
+    @Update("update user set name='${name}',age = ${age} where id=${id}")
+    public void editByUser(User user);
 }

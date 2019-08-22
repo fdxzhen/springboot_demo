@@ -10,4 +10,5 @@ public interface UserService {
     public User getUserById(int id);
     public void insertUser(User user);
     public void deleteById(int id);
+    public void editByUser(User user);
 }
