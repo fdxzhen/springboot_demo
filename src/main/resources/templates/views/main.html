@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script>
+</head>
+<body >
+<div class="layui-container">
+    <blockquote class="layui-elem-quote">以下是全部用户及用户信息</blockquote>
+
+    <table class="layui-table">
+        <colgroup>
+            <col width="150">
+            <col >
+        </colgroup>
+        <thead>
+        <tr>
+            <th>昵称</th>
+            <th>加入时间</th>
+            <th>编辑</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list lists as L>
+        <tr>
+            <td>${L.name}</td>
+            <td>${L.age}</td>
+            <td><a href="/login" class="layui-icon-edit">编辑</a></td>
+            <td><a href="/delete/${(L.id)}" class="layui-icon-delete">删除</a></td>
+        </tr>
+        </#list>
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+
+</body>
+</html>
