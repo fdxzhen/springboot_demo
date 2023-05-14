@@ -8,7 +8,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 @SpringBootApplication
 @EnableScheduling
-@Slf4j
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -16,7 +15,7 @@ public class Application {
 
     @Scheduled(cron = "0 * * * * ?")
     public void task() {
-        log.info("This is a scheduled task.");
+        System.out.println("test ......");
 
     }
 }
